@@ -1,4 +1,4 @@
-# [Your UI Kit Name]
+# infinite_binary_ui_kit
 
 infinite_binary_ui_kit is a comprehensive, customizable, and modern UI kit built for Flutter. It aims to provide a solid foundation of widgets,resources, themes, and utilities and extensions to accelerate the development of Flutter applications with a focus on design and usability.
 
