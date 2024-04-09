@@ -1,39 +1,25 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# [Your UI Kit Name]
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+infinite_binary_ui_kit is a comprehensive, customizable, and modern UI kit built for Flutter. It aims to provide a solid foundation of widgets,resources, themes, and utilities and extensions to accelerate the development of Flutter applications with a focus on design and usability.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Widgets Galore**: Includes a wide range of customizable widgets, including buttons, cards, dialogs, and more, designed to fit any app's needs.
+- **Resources**: Includes a wide range of customizable Resources, including constant paddings, margins, customized decoration box, colors, and more, designed to fit any app's needs.
+- **Theme**: Full theme support to easily adapt the UI kit to your brand's colors, fonts, text styles and overall look.
+- **Responsive Design**: Designed with responsiveness in mind, ensuring your app looks great on both small and large screens.
+- **Accessibility Ready**: Ensures that your app is accessible to as many users as possible, adhering to best practices.
+- **Well Documented**: Every widget and feature is thoroughly documented with examples to help you integrate them into your project seamlessly.
+- **Utils**: Default break points are available to create responsive widgets and screens.
+- **Extensions**: Ready to use extensions that make your development easier.
 
-## Getting started
+## Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Installation
 
-## Usage
+Add [infinite_binary_ui_kit] to your project by including it in your `pubspec.yaml` file:
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  infinite_binary_ui_kit: ^0.0.1
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
