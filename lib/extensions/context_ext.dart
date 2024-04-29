@@ -1,6 +1,6 @@
 part of 'extensions.dart';
 
-enum DeviceType { phone, tablet }
+enum DeviceType { mobile, desktop }
 
 extension ContextExt on BuildContext {
   bool get fromRtl {
@@ -8,13 +8,12 @@ extension ContextExt on BuildContext {
   }
 
   DeviceType get deviceType {
-    // View.of(this).physicalSize.shortestSide;
     final data = MediaQueryData.fromView(WidgetsBinding.instance.window);
-    return data.size.shortestSide < 550 ? DeviceType.phone : DeviceType.tablet;
+    return data.size.shortestSide < 600 ? DeviceType.mobile : DeviceType.desktop;
   }
 
-  bool get isTablet => deviceType == DeviceType.tablet;
-  bool get isPhone => deviceType == DeviceType.phone;
+  bool get isDesktop => deviceType == DeviceType.desktop;
+  bool get isMobile => deviceType == DeviceType.mobile;
 
   // get height and width of the screen directly from the context
   double screenWidth([double ratio = 1]) => MediaQuery.of(this).size.width * ratio;
