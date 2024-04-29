@@ -1,6 +1,8 @@
+// ignore_for_file: constant_identifier_names
+
 part of 'resources.dart';
 
-class UIConstants {
+class IBConstants {
   /// for auth page
 
   static const double AUTH_PAGE_SPACING_8 = 8;
