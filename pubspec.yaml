@@ -8,10 +8,13 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  cached_network_image: ^3.4.1
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.10+1
+  flutter_svg_image: ^1.1.0+1
+  jovial_svg: ^1.1.23
 
 dev_dependencies:
   flutter_test:

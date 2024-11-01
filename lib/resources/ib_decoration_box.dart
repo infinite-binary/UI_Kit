@@ -1,8 +1,10 @@
+// ignore_for_file: constant_identifier_names
+
 part of 'resources.dart';
 
 class IBDecorationBox {
   static BoxShadow get boxShadow => const BoxShadow(
-        color: AppColors.Grey1,
+        color: IBColors.Grey1,
         blurRadius: 4,
         spreadRadius: 2,
       );
@@ -82,6 +84,8 @@ class IBDecorationBox {
       fit: fit,
     );
   }
+
+  static const IB_BUTTON_BORDER_RADIUS = BorderRadius.all(Radius.circular(32));
 }
 
 class IBMargins {
@@ -124,11 +128,11 @@ class IBMargins {
   static const EdgeInsets MARGIN_TOP_24 = EdgeInsets.only(top: 24);
   static const EdgeInsets MARGIN_TOP_32 = EdgeInsets.only(top: 32);
   static const EdgeInsets MARGIN_TOP_48 = EdgeInsets.only(top: 48);
+
+  static const double IB_BUTTON_ICON_MARGIN = 8.0;
 }
 
 class IBPaddings {
-  //  General Paddings/Margins
-
   //[Paddings]
   static const EdgeInsets PADDINGx2 = EdgeInsets.all(2);
   static const EdgeInsets PADDINGx4 = EdgeInsets.all(4);
@@ -189,24 +193,6 @@ class IBPaddings {
   //[TOP AND RIGHT Paddings]
   static const EdgeInsets PADDING_RTx12 = EdgeInsets.only(top: 12, right: 12);
 
-  static const BorderRadius VTO_PRODUCT_MODAL_ITEM_RADIUS = BorderRadius.all(Radius.circular(16));
-
-  /// for app checkbox
-  static const EdgeInsets APP_CHECKBOX_MARGIN_TOP = EdgeInsets.only(top: 14);
-  static const EdgeInsets APP_CHECKBOX_MARGIN_RIGHT = EdgeInsets.only(right: 10);
-
-  /// for app buttom sheet
-  static const EdgeInsets APP_BOTTOM_SHEET_MARGIN_TOP = EdgeInsets.only(top: 6);
-  static const EdgeInsets APP_BOTTOM_SHEET_ALIGN_MARGIN = EdgeInsets.fromLTRB(0, 10, 16, 0);
-  static const BorderRadius APP_BOTTOM_SHEET_CLIP_RADIUS = BorderRadius.only(
-    topLeft: Radius.circular(16),
-    topRight: Radius.circular(16),
-  );
-
-  static const BorderRadius APP_BOTTOM_SHEET_INDICATOR_RADIUS =
-      BorderRadius.all(Radius.circular(30));
-  static const EdgeInsets APP_BUTTON_ICON_MARGIN_RIGHT = EdgeInsets.only(right: 8);
-
   /// for keyboard Overlay
   static const EdgeInsets KEYBOARD_OVERLAY_PADDING = EdgeInsets.only(top: 4.0, bottom: 4.0);
   static const EdgeInsets KEYBOARD_OVERLAY_INNER_PADDING =
@@ -220,4 +206,22 @@ class IBPaddings {
   // static const EdgeInsets BOTTOM_NAV_MARGIN_TOP_10 = EdgeInsets.only(top: 10);
   // static const BorderRadius BOTTOM_NAV_RADIUS_10 = BorderRadius.all(Radius.circular(10));
   // static const BorderRadius BOTTOM_NAV_RADIUS_50 = BorderRadius.all(Radius.circular(50));
+
+  static const IB_BUTTON_PADDING_LARGE = EdgeInsets.symmetric(horizontal: 32);
+  static const IB_BUTTON_PADDING_MEDIUM = EdgeInsets.symmetric(horizontal: 32);
+  static const IB_BUTTON_PADDING_SMALL = EdgeInsets.symmetric(horizontal: 24);
+  static const IB_BUTTON_PADDING_XSMALL = EdgeInsets.symmetric(horizontal: 8);
+  static const IB_BUTTON_PADDING_SMALL_WITH_ICON_LEFT_POSITIONED =
+      EdgeInsets.only(left: 16, right: 20);
+  static const IB_BUTTON_PADDING_MEDIUM_WITH_ICON_LEFT_POSITIONED =
+      EdgeInsets.only(left: 32, right: 24);
+  static const IB_BUTTON_PADDING_LARGE_WITH_ICON_LEFT_POSITIONED =
+      EdgeInsets.only(left: 32, right: 24);
+
+  static const IB_BUTTON_PADDING_SMALL_WITH_ICON_RIGHT_POSITIONED =
+      EdgeInsets.only(left: 20, right: 16);
+  static const IB_BUTTON_PADDING_MEDIUM_WITH_ICON_RIGHT_POSITIONED =
+      EdgeInsets.only(left: 24, right: 24);
+  static const IB_BUTTON_PADDING_LARGE_WITH_ICON_RIGHT_POSITIONED =
+      EdgeInsets.only(left: 32, right: 24);
 }
