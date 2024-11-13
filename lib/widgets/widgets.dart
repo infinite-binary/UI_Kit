@@ -25,3 +25,4 @@ part 'ib_image_view.dart';
 part 'ib_input_field.dart';
 part 'ib_chip.dart';
 part 'shimmer_skeleton.dart';
+part 'ib_load_more.dart';

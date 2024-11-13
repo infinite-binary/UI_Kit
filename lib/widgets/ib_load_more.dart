@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of 'widgets.dart';
 
 abstract class IBLoadMore<T extends StatefulWidget> extends State<T> {
   late ScrollController scrollController;
