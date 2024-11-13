@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 part of 'utils.dart';
 
 abstract class IBValidator {
@@ -5,7 +7,7 @@ abstract class IBValidator {
     return [
       "Full name cannot be empty",
       "Full name is invalid",
-      "Please remove the space from lastname"
+      "Please remove the space from lastName"
     ][index];
   }
 
@@ -13,6 +15,14 @@ abstract class IBValidator {
     return [
       "Email cannot be empty",
       "Email is invalid",
+    ][index];
+  }
+
+  static String _phone([int index = 0]) {
+    return [
+      "Phone number cannot be empty",
+      "Phone number is invalid",
+      "Please specify a valid number between 6 - 11 digits",
     ][index];
   }
 
@@ -83,11 +93,11 @@ abstract class IBValidator {
     }
 
     if (value.startsWith(" ")) {
-      return "Please remove the space from firstname";
+      return "Please remove the space from firstName";
     }
 
     if (value.endsWith(" ")) {
-      return "Please remove the space from lastname";
+      return "Please remove the space from lastName";
     }
 
     var spaces = value.split(" ").toList();
