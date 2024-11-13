@@ -37,6 +37,7 @@ class IBConstants {
   static const Size SIZE_40 = Size(40, 40);
   static const Size SIZE_44 = Size(44, 44);
   static const Size SIZE_50 = Size(50, 50);
+  static const Size SIZE_55 = Size(55, 55);
   static const Size SIZE_60 = Size(60, 60);
   static const Size SIZE_54 = Size(54, 54);
   static const Size SIZE_70 = Size(70, 70);
