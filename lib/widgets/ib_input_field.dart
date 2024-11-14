@@ -30,7 +30,7 @@ class IBInputField extends StatefulWidget {
     this.isLoading = false,
     this.isCompulsory = false,
     this.boxColor = Colors.transparent,
-    this.borderRadius = const BorderRadius.all(Radius.circular(15)),
+    this.borderRadius,
     this.inputFormatters,
     this.onValidateNumber,
     this.countryCodes = const [],
@@ -131,6 +131,7 @@ class IBInputField extends StatefulWidget {
     AsyncCallback? onTap,
     TextInputType? keyboardType,
     final Function()? onEditingComplete,
+    BorderRadius? borderRadius,
   }) =>
       IBInputField._(
         key: key,
@@ -159,6 +160,7 @@ class IBInputField extends StatefulWidget {
         onTap: onTap,
         keyboardType: keyboardType,
         onEditingComplete: onEditingComplete,
+        borderRadius: borderRadius,
       );
 
   final TextEditingController controller;
@@ -192,7 +194,7 @@ class IBInputField extends StatefulWidget {
   final bool isCompulsory;
   final Color boxColor;
 
-  final BorderRadius borderRadius;
+  final BorderRadius? borderRadius;
   final List<TextInputFormatter>? inputFormatters;
   final List<dynamic> countryCodes;
   final Function(dynamic countryCodes)? onTapCountry;
@@ -402,7 +404,7 @@ class _IBInputFieldState extends State<IBInputField> {
           widget.maxLines != null && widget.minLines != null ? null : IBConstants.SIZE_55.height,
       decoration: BoxDecoration(
         color: boxColor,
-        borderRadius: _getRadius,
+        borderRadius: widget.borderRadius ?? _getRadius,
       ),
       child: TextField(
         textDirection: TextDirection.ltr,
