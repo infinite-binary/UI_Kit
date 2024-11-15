@@ -452,7 +452,8 @@ class _IBInputFieldState extends State<IBInputField> {
           contentPadding: const EdgeInsets.fromLTRB(16, 8, 10, 8),
           labelText: labelText,
           hintText: hintText,
-          hintStyle: context.regular16.copyWith(color: IBColors.Grey1),
+          hintStyle: context.regular16
+              .copyWith(color: hasError ? widget.errorTextColor ?? IBColors.Red0 : IBColors.Grey1),
           labelStyle: labelStyle.copyWith(color: labelColor),
           suffixIcon: suffixIconWidget,
           prefix: prefixWidget,
