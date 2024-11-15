@@ -46,6 +46,9 @@ class IBInputField extends StatefulWidget {
     this.connectedType,
     this.textInputAction,
     this.onTap,
+    this.errorFillColor,
+    this.errorTextColor,
+    this.errorFooterColor,
   });
 
   factory IBInputField.phone({
@@ -132,6 +135,9 @@ class IBInputField extends StatefulWidget {
     TextInputType? keyboardType,
     final Function()? onEditingComplete,
     BorderRadius? borderRadius,
+    Color? errorFillColor,
+    Color? errorTextColor,
+    Color? errorFooterColor,
   }) =>
       IBInputField._(
         key: key,
@@ -161,6 +167,9 @@ class IBInputField extends StatefulWidget {
         keyboardType: keyboardType,
         onEditingComplete: onEditingComplete,
         borderRadius: borderRadius,
+        errorFillColor: errorFillColor,
+        errorTextColor: errorTextColor,
+        errorFooterColor: errorFooterColor,
       );
 
   final TextEditingController controller;
@@ -205,6 +214,9 @@ class IBInputField extends StatefulWidget {
   final String? footerMessage;
   final Color? footerColor;
   final Color? fillColor;
+  final Color? errorFooterColor;
+  final Color? errorFillColor;
+  final Color? errorTextColor;
   final Color? textColor;
   final ConnectedType? connectedType;
   final AsyncCallback? onTap;
@@ -258,7 +270,7 @@ class _IBInputFieldState extends State<IBInputField> {
       child: Text(
         errorMessage,
         style: context.bodySmall?.copyWith(
-          color: hasError ? IBColors.Red1 : widget.footerColor,
+          color: hasError ? widget.errorFooterColor ?? IBColors.Red1 : widget.footerColor,
         ),
       ),
     );
@@ -388,8 +400,8 @@ class _IBInputFieldState extends State<IBInputField> {
     Color? labelColor = widget.footerColor;
 
     if (hasError) {
-      boxColor = IBColors.Red0;
-      labelColor = IBColors.Red1;
+      boxColor = widget.errorFillColor ?? IBColors.Red0;
+      labelColor = widget.errorTextColor ?? IBColors.Red1;
     }
 
     TextStyle labelStyle = context.regular12;
@@ -418,7 +430,7 @@ class _IBInputFieldState extends State<IBInputField> {
         textCapitalization: textCapitalization,
         keyboardType: keyboardType,
         style: context.regular16.copyWith(
-          color: hasError ? IBColors.Red1 : widget.textColor,
+          color: hasError ? widget.errorTextColor ?? IBColors.Red1 : widget.textColor,
         ),
         cursorHeight: IBConstants.SIZE_15.height,
         onTap: () async {
