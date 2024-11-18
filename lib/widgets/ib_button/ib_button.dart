@@ -200,7 +200,7 @@ class IBButton extends StatelessWidget {
     return Container(
       key: widgetKey,
       height: _heightFromButtonType(size),
-      decoration: type == IBButtonType.primary ? _gradientDecoration() : null,
+      decoration: type == IBButtonType.primary || gradient != null ? _gradientDecoration() : null,
       child: TextButton(
         onPressed: (isLoading || onPressed == null) ? null : () => _loadFuture(context),
         style: TextButton.styleFrom(
@@ -271,6 +271,7 @@ class IBButton extends StatelessWidget {
   }
 
   Color _loaderColorFromButtonType(IBButtonType type) {
+    if (loaderColor != null) return loaderColor!;
     return switch (type) {
       // Gradient background is handled on the container
       IBButtonType.primary => Colors.white,
@@ -341,7 +342,7 @@ class IBButton extends StatelessWidget {
 
   BoxDecoration _gradientDecoration() {
     return IBTheme.buttonGradientDecoration.copyWith(
-      gradient: isEnabled ? null : const LinearGradient(colors: IBColors.mainGradient),
+      gradient: isEnabled ? null : gradient ?? const LinearGradient(colors: IBColors.mainGradient),
     );
   }
 
