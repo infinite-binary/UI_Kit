@@ -344,6 +344,7 @@ class IBButton extends StatelessWidget {
     return IBTheme.buttonGradientDecoration.copyWith(
       gradient:
           isEnabled ? (gradient ?? const LinearGradient(colors: IBColors.mainGradient)) : null,
+      borderRadius: customBorderRadius ?? IBDecorationBox.IB_BUTTON_BORDER_RADIUS,
     );
   }
 
