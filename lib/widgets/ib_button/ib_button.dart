@@ -15,6 +15,8 @@ class IBButton extends StatelessWidget {
     this.customBorderRadius,
     this.expanded = false,
     this.backgroundColor,
+    this.gradient,
+    this.loaderColor,
   }) : assert(title != null || iconModel != null);
 
   final FutureOr Function()? onPressed;
@@ -31,19 +33,24 @@ class IBButton extends StatelessWidget {
   final BorderRadius? customBorderRadius;
   final bool expanded;
   final Color? backgroundColor;
+  final LinearGradient? gradient;
+  final Color? loaderColor;
 
-  factory IBButton.small(
-      {required String title,
-      Key? key,
-      FutureOr Function()? onPressed,
-      bool isLoading = false,
-      bool isEnabled = true,
-      bool showErrorToast = false,
-      required IBButtonType type,
-      Map<IBButtonState, Color>? foregroundColors,
-      IBButtonIconModel? iconModel,
-      BorderRadius? borderRadius,
-      Color? backgroundColor}) {
+  factory IBButton.small({
+    required String title,
+    Key? key,
+    FutureOr Function()? onPressed,
+    bool isLoading = false,
+    bool isEnabled = true,
+    bool showErrorToast = false,
+    required IBButtonType type,
+    Map<IBButtonState, Color>? foregroundColors,
+    IBButtonIconModel? iconModel,
+    BorderRadius? borderRadius,
+    Color? backgroundColor,
+    LinearGradient? gradient,
+    Color? loaderColor,
+  }) {
     return IBButton._(
       widgetKey: key,
       title: title,
@@ -57,6 +64,8 @@ class IBButton extends StatelessWidget {
       iconModel: iconModel,
       customBorderRadius: borderRadius,
       backgroundColor: backgroundColor,
+      gradient: gradient,
+      loaderColor: loaderColor,
     );
   }
 
@@ -72,6 +81,8 @@ class IBButton extends StatelessWidget {
     IBButtonIconModel? iconModel,
     BorderRadius? customBorderRadius,
     Color? backgroundColor,
+    LinearGradient? gradient,
+    Color? loaderColor,
   }) {
     return IBButton._(
       widgetKey: key,
@@ -86,6 +97,8 @@ class IBButton extends StatelessWidget {
       iconModel: iconModel,
       customBorderRadius: customBorderRadius,
       backgroundColor: backgroundColor,
+      gradient: gradient,
+      loaderColor: loaderColor,
     );
   }
 
@@ -102,6 +115,8 @@ class IBButton extends StatelessWidget {
     BorderRadius? customBorderRadius,
     bool? expanded,
     Color? backgroundColor,
+    LinearGradient? gradient,
+    Color? loaderColor,
   }) {
     return IBButton._(
       widgetKey: key,
@@ -117,6 +132,8 @@ class IBButton extends StatelessWidget {
       customBorderRadius: customBorderRadius,
       expanded: expanded ?? false,
       backgroundColor: backgroundColor,
+      gradient: gradient,
+      loaderColor: loaderColor,
     );
   }
 
@@ -133,6 +150,8 @@ class IBButton extends StatelessWidget {
     bool? expanded,
     Color? backgroundColor,
     Map<IBButtonState, Color>? foregroundColors,
+    LinearGradient? gradient,
+    Color? loaderColor,
   }) {
     return IBButton._(
       widgetKey: key,
@@ -148,6 +167,8 @@ class IBButton extends StatelessWidget {
       expanded: expanded ?? false,
       backgroundColor: backgroundColor,
       foregroundColors: foregroundColors,
+      gradient: gradient,
+      loaderColor: loaderColor,
     );
   }
 
