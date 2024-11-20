@@ -138,6 +138,8 @@ class IBInputField extends StatefulWidget {
     Color? errorFillColor,
     Color? errorTextColor,
     Color? errorFooterColor,
+    Widget? prefixWidget,
+    Widget? suffixWidget,
   }) =>
       IBInputField._(
         key: key,
@@ -170,6 +172,8 @@ class IBInputField extends StatefulWidget {
         errorFillColor: errorFillColor,
         errorTextColor: errorTextColor,
         errorFooterColor: errorFooterColor,
+        prefixIcon: prefixWidget,
+        sufixIcon: suffixWidget,
       );
 
   final TextEditingController controller;
@@ -282,9 +286,9 @@ class _IBInputFieldState extends State<IBInputField> {
     bool isPassword = null != widget.onPassChange;
     final usePrefixAsIcon = (isPhone && !_hasText && !_hasFocus);
 
-    Widget? prefixWidget = _getPrefixWidget(context, usePrefixAsIcon);
-    Widget? prefixIconWigdet = _getPrefixIconWigdet(context, usePrefixAsIcon);
-    Widget? suffixIconWidget = _getSuffixIconWidget(isPassword);
+    Widget? prefixWidget = widget.prefixIcon ?? _getPrefixWidget(context, usePrefixAsIcon);
+    Widget? prefixIconWidget = widget.prefixIcon ?? _getPrefixIconWigdet(context, usePrefixAsIcon);
+    Widget? suffixIconWidget = widget.sufixIcon ?? _getSuffixIconWidget(isPassword);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -294,7 +298,7 @@ class _IBInputFieldState extends State<IBInputField> {
             isPassword: isPassword,
             suffixIconWidget: suffixIconWidget,
             prefixWidget: prefixWidget,
-            prefixIconWigdet: prefixIconWigdet,
+            prefixIconWidget: prefixIconWidget,
             state: state,
           ),
         ),
@@ -389,7 +393,7 @@ class _IBInputFieldState extends State<IBInputField> {
     required bool isPassword,
     required Widget? suffixIconWidget,
     required Widget? prefixWidget,
-    required Widget? prefixIconWigdet,
+    required Widget? prefixIconWidget,
     required FormFieldState<String> state,
   }) {
     bool hasError = state.hasError;
@@ -457,7 +461,7 @@ class _IBInputFieldState extends State<IBInputField> {
           labelStyle: labelStyle.copyWith(color: labelColor),
           suffixIcon: suffixIconWidget,
           prefix: prefixWidget,
-          prefixIcon: prefixIconWigdet,
+          prefixIcon: prefixIconWidget,
           prefixIconConstraints: const BoxConstraints(maxHeight: 25),
           suffixIconConstraints: const BoxConstraints(maxHeight: 25),
         ),
